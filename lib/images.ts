@@ -55,22 +55,22 @@ export const connectivityImage = unsplash(
 export const quoteBackgroundImage =
   "https://framerusercontent.com/images/kYTbzWjrPS6LW4Hu0ETEWYbkaw.jpg?scale-down-to=2048";
 
-/** 1:1 square — matches facilities reference card proportions */
+/** 4:3 landscape — matches facilities reference card proportions */
 export const facilityImages = [
   {
-    src: unsplashCrop("photo-1599586120429-48281b6f0ece", 900, 900),
+    src: unsplashCrop("photo-1599586120429-48281b6f0ece", 1000, 750),
     alt: "Grass tennis court with white lines",
   },
   {
-    src: unsplashCrop("photo-1566073771259-6a8506099945", 900, 900),
+    src: unsplashCrop("photo-1566073771259-6a8506099945", 1000, 750),
     alt: "Modern hotel room interior",
   },
   {
-    src: unsplashCrop("photo-1534438327276-14e5300c3a48", 900, 900),
+    src: unsplashCrop("photo-1534438327276-14e5300c3a48", 1000, 750),
     alt: "Indoor gym with weight machines",
   },
   {
-    src: unsplashCrop("photo-1576013551627-0cc20b96c2a7", 900, 900),
+    src: unsplashCrop("photo-1576013551627-0cc20b96c2a7", 1000, 750),
     alt: "Outdoor swimming pool at dusk",
   },
 ] as const;
