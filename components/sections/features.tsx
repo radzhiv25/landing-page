@@ -1,4 +1,6 @@
 import Image from "next/image";
+import { CoverImage } from "@/components/cover-image";
+import { featureImages, quoteBackgroundImage } from "@/lib/images";
 import { Montserrat } from "next/font/google";
 
 const montserrat = Montserrat({
@@ -7,9 +9,6 @@ const montserrat = Montserrat({
 });
 
 const lime = "#a4c639";
-
-const WAVE_IMAGE =
-  "https://framerusercontent.com/images/kYTbzWjrPS6LW4Hu0ETEWYbkaw.jpg?scale-down-to=2048";
 
 const features = [
   "First venue in the world to have 60 multi surface courts, at one location with full range of facilities and services",
@@ -78,7 +77,7 @@ export function FeaturesSection() {
       className={`relative overflow-hidden bg-white text-zinc-900 ${montserrat.className}`}
     >
       <Image
-        src={WAVE_IMAGE}
+        src={quoteBackgroundImage}
         alt=""
         fill
         className="pointer-events-none object-cover object-center opacity-[0.18]"
@@ -125,8 +124,20 @@ export function FeaturesSection() {
             }
           />
           <div className="mt-12 grid gap-5 sm:grid-cols-2">
-            <div className="aspect-[3/4] overflow-hidden rounded-3xl bg-zinc-200 sm:min-h-[420px]" />
-            <div className="aspect-[4/3] overflow-hidden rounded-3xl bg-zinc-200 sm:min-h-[420px]" />
+            <div className="relative overflow-hidden rounded-3xl bg-zinc-200 sm:min-h-[420px]">
+              <CoverImage
+                src={featureImages[0].src}
+                alt={featureImages[0].alt}
+                sizes="(max-width: 640px) 100vw, 50vw"
+              />
+            </div>
+            <div className="relative overflow-hidden rounded-3xl bg-zinc-200 sm:min-h-[420px]">
+              <CoverImage
+                src={featureImages[1].src}
+                alt={featureImages[1].alt}
+                sizes="(max-width: 640px) 100vw, 50vw"
+              />
+            </div>
           </div>
         </div>
       </div>

@@ -1,3 +1,5 @@
+import { CoverImage } from "@/components/cover-image";
+import { aboutGridImages } from "@/lib/images";
 import { Montserrat } from "next/font/google";
 
 const montserrat = Montserrat({
@@ -152,10 +154,19 @@ export function AboutSection() {
                   `,
                 }}
               >
-                <div className="bg-[#e6e6e6]" style={{ gridArea: "wide" }} />
-                <div className="bg-[#e6e6e6]" style={{ gridArea: "tall" }} />
-                <div className="bg-[#e6e6e6]" style={{ gridArea: "sq1" }} />
-                <div className="bg-[#e6e6e6]" style={{ gridArea: "sq2" }} />
+                {aboutGridImages.map((image) => (
+                  <div
+                    key={image.area}
+                    className="relative overflow-hidden bg-[#e6e6e6]"
+                    style={{ gridArea: image.area }}
+                  >
+                    <CoverImage
+                      src={image.src}
+                      alt={image.alt}
+                      sizes="(max-width: 1024px) 100vw, 58vw"
+                    />
+                  </div>
+                ))}
               </div>
             </div>
           </div>

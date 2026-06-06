@@ -1,13 +1,11 @@
 import Image from "next/image";
+import { quoteBackgroundImage } from "@/lib/images";
 import { Montserrat } from "next/font/google";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });
-
-const WAVE_IMAGE =
-  "https://framerusercontent.com/images/kYTbzWjrPS6LW4Hu0ETEWYbkaw.jpg?scale-down-to=2048";
 
 export function QuoteSection() {
   return (
@@ -16,7 +14,7 @@ export function QuoteSection() {
       className={`relative min-h-[520px] overflow-hidden ${montserrat.className}`}
     >
       <Image
-        src={WAVE_IMAGE}
+        src={quoteBackgroundImage}
         alt=""
         fill
         priority

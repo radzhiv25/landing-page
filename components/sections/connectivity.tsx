@@ -1,3 +1,5 @@
+import { CoverImage } from "@/components/cover-image";
+import { connectivityImage } from "@/lib/images";
 import { Montserrat } from "next/font/google";
 
 const montserrat = Montserrat({
@@ -72,7 +74,12 @@ export function ConnectivitySection() {
         </div>
 
         {/* Right panel */}
-        <div className="relative min-h-[360px] bg-zinc-300 lg:min-h-full">
+        <div className="relative min-h-[360px] overflow-hidden bg-zinc-300 lg:min-h-full">
+          <CoverImage
+            src={connectivityImage}
+            alt="Hunter Valley landscape"
+            sizes="(max-width: 1024px) 100vw, 50vw"
+          />
           <div className="absolute inset-0 bg-gradient-to-br from-sky-200/40 via-emerald-100/30 to-zinc-400/50" />
 
           {/* Carousel dots */}

@@ -1,3 +1,5 @@
+import { CoverImage } from "@/components/cover-image";
+import { professionalPortraits } from "@/lib/images";
 import { Montserrat } from "next/font/google";
 
 const montserrat = Montserrat({
@@ -72,9 +74,15 @@ export function ProfessionalsSection() {
 
         {/* Profile cards */}
         <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-10">
-          {professionals.map((person) => (
+          {professionals.map((person, index) => (
             <article key={person.name}>
-              <div className="aspect-[4/5] overflow-hidden rounded-2xl bg-zinc-200" />
+              <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-zinc-200">
+                <CoverImage
+                  src={professionalPortraits[index]}
+                  alt={`Portrait of ${person.name}`}
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                />
+              </div>
               <h3 className="mt-5 text-xl font-bold text-black">{person.name}</h3>
               <p className="mt-1 text-[14px] italic text-zinc-500">
                 {person.title}
