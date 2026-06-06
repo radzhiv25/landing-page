@@ -61,23 +61,23 @@ export function HeroSection() {
       className={`relative h-screen w-full overflow-hidden bg-[#1a1d1a] ${montserrat.className}`}
     >
       {/* Center content */}
-      <div className="absolute top-1/2 left-1/2 z-10 flex w-full -translate-x-1/2 -translate-y-1/2 flex-col items-center px-6 text-center text-white">
-        <p className="text-base font-medium tracking-[0.35em] uppercase">
+      <div className="absolute top-1/2 left-1/2 z-10 flex w-full max-w-[100vw] -translate-x-1/2 -translate-y-1/2 flex-col items-center px-4 text-center text-white sm:px-6">
+        <p className="text-[10px] font-medium tracking-[0.28em] uppercase sm:text-base sm:tracking-[0.35em]">
           SSA Hunter Valley
         </p>
 
-        <h1 className="mt-6 uppercase">
-          <span className="block text-[2.75rem] font-light leading-[1.1] tracking-[0.08em] sm:text-5xl md:text-[3.25rem] lg:text-[3.375rem]">
+        <h1 className="mt-4 w-full max-w-full uppercase sm:mt-6">
+          <span className="block text-[clamp(1.05rem,4.2vw,3.375rem)] font-light leading-[1.2] tracking-[0.04em] sm:tracking-[0.08em]">
             Grow your game with the
           </span>
-          <span className="relative mt-0.5 inline-block pb-4 text-[4.5rem] font-extrabold leading-none tracking-[0.01em] sm:text-7xl md:text-[4.75rem] lg:text-[5rem]">
+          <span className="relative mt-1 inline-block max-w-full pb-3 text-[clamp(2.1rem,10.5vw,5rem)] font-extrabold leading-none tracking-tight sm:mt-0.5 sm:pb-4 sm:tracking-[0.01em]">
             Professionals
             <span className="absolute bottom-0 left-1/2 h-px w-[45%] -translate-x-1/2 bg-white" />
           </span>
         </h1>
 
         <div
-          className="relative mt-10 flex w-full max-w-3xl items-center justify-center border-t border-b px-8 py-3 sm:max-w-4xl sm:px-14 sm:py-3.5"
+          className="relative mt-6 flex w-full max-w-full items-center justify-center border-t border-b px-4 py-2.5 sm:mt-10 sm:max-w-3xl sm:px-8 sm:py-3 md:max-w-4xl md:px-14 md:py-3.5"
           style={{
             borderTopColor: "rgba(220, 235, 160, 0.15)",
             borderBottomColor: "rgba(30, 38, 18, 0.35)",
@@ -104,14 +104,14 @@ export function HeroSection() {
               )`,
             }}
           />
-          <p className="relative z-10 whitespace-nowrap text-base font-medium tracking-[0.28em] text-white uppercase sm:text-xl sm:tracking-[0.35em] md:text-2xl md:tracking-[0.38em]">
+          <p className="relative z-10 text-[9px] font-medium tracking-[0.16em] text-white uppercase sm:whitespace-nowrap sm:text-base sm:tracking-[0.28em] md:text-xl md:tracking-[0.35em] lg:text-2xl lg:tracking-[0.38em]">
             Adopt • Nurture • Deliver
           </p>
         </div>
 
         <a
           href="#"
-          className="mt-10 inline-block rounded-full border border-[#cfee4e] bg-black/30 px-14 py-3 text-sm font-normal normal-case tracking-wide text-white backdrop-blur-sm transition-colors hover:bg-black/40"
+          className="mt-6 inline-block rounded-full border border-[#cfee4e] bg-black/30 px-10 py-2.5 text-sm font-normal normal-case tracking-wide text-white backdrop-blur-sm transition-colors hover:bg-black/40 sm:mt-10 sm:px-14 sm:py-3"
         >
           Register Now
         </a>

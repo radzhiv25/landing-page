@@ -1,3 +1,5 @@
+import { CoverImage } from "@/components/cover-image";
+import { programImages } from "@/lib/images";
 import { Montserrat } from "next/font/google";
 
 const montserrat = Montserrat({
@@ -11,17 +13,17 @@ const programs = [
   {
     title: "Academy",
     subtitle: "Live and train with us",
-    bg: "linear-gradient(160deg, #3d5a3a 0%, #6b8f5e 50%, #2a4028 100%)",
+    ...programImages[0],
   },
   {
     title: "Camps",
     subtitle: "Train like a pro with us",
-    bg: "linear-gradient(160deg, #4a5568 0%, #718096 50%, #2d3748 100%)",
+    ...programImages[1],
   },
   {
     title: "Performance",
     subtitle: "Elevate your game with us",
-    bg: "linear-gradient(160deg, #2c5282 0%, #4a7ab8 50%, #1a365d 100%)",
+    ...programImages[2],
   },
 ];
 
@@ -36,7 +38,10 @@ function MarqueeWord({
 }) {
   if (variant === "solid") {
     return (
-      <span className="font-black leading-none" style={{ color: lime }}>
+      <span
+        className="inline-block font-black leading-none tracking-tight"
+        style={{ color: lime }}
+      >
         {word}
       </span>
     );
@@ -44,10 +49,12 @@ function MarqueeWord({
 
   return (
     <span
-      className="font-black leading-none"
+      className="inline-block font-black leading-none tracking-tight"
       style={{
-        color: "transparent",
-        WebkitTextStroke: `1.5px ${lime}`,
+        color: lime,
+        WebkitTextFillColor: "white",
+        WebkitTextStroke: `1px ${lime}`,
+        paintOrder: "stroke fill",
       }}
     >
       {word}
@@ -140,10 +147,14 @@ export function ProgramsSection() {
           {programs.map((program) => (
             <article
               key={program.title}
-              className="relative flex min-h-[380px] flex-col justify-end overflow-hidden rounded-3xl sm:min-h-[420px]"
-              style={{ background: program.bg }}
+              className="relative flex min-h-[380px] flex-col justify-end overflow-hidden rounded-3xl bg-zinc-200 sm:min-h-[420px]"
             >
-              <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
+              <CoverImage
+                src={program.src}
+                alt={program.alt}
+                sizes="(max-width: 640px) 100vw, 33vw"
+              />
+              <div className="absolute inset-0 bg-linear-to-t from-black/55 via-black/10 to-transparent" />
               <div className="relative z-10 px-6 pb-8 text-center text-white">
                 <h3 className="text-2xl font-bold">{program.title}</h3>
                 <p className="mt-1 text-sm text-white/90">{program.subtitle}</p>
